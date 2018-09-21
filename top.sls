@@ -7,10 +7,6 @@ base:
       - salt.pkgrepo
       - salt.minion
       - net-tools
-  {#- Enable the firewalld SLS on RHEL/CentOS minions not running in AWS. #}
-  {%- if not salt['grains.get']('biosversion').endswith('amazon') %}
-      - firewalld
-  {%- endif %}
     'I@environment:base and I@role:salt-master':
       - salt.formulas
       - salt.gitfs.gitpython
