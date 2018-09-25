@@ -1,5 +1,6 @@
 base:
   '*':
+    - salt-formula
     - salt.minion
     - yum
     - ssh
