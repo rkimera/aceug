@@ -1,4 +1,5 @@
 base:
   '*':
-    - users
+    - install
+    - apache
      
