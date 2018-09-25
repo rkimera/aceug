@@ -1,6 +1,9 @@
 base:
-  'I@environment:base and I@role:salt-master': &saltmaster
+  '*':
+    - salt.minion
+    - yum
+    - ssh
+    - git
+  'os:(RedHat|CentOS)':
      - salt.master
-development:
-  'I@environment:development and I@role:salt-master': *saltmaster
-
+     
