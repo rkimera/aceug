@@ -4,9 +4,5 @@ Install_Packages:
       - curl
       - rsync
       - lftp
-      - apache2
-      - vim
-      - beav
-      - cherrytree
-      - pgcharts
+
  
