@@ -1,6 +1,5 @@
-development: 
-  'I@environment:development and I@role:salt-master':
-    - salt.formulas
-    - salt.gitfs.gitpython
-    - salt.master
+base:
+  [ip-172-31-28-38.us-west-2.compute.internal]:
+    - install
+
 
