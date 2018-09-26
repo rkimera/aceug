@@ -1,4 +1,5 @@
 base:  
-  'ip-172-31-28-38.us-west-2.compute.internal':
+  'I@environment:production and G@os_family:RedHat':
+    - salt-minion
     - yum
     - hostname
