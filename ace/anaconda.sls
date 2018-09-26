@@ -2,7 +2,7 @@ run_anaconda_installer:
   file.managed:
     - name: /Anaconda3-5.2.0-Linux-x86_64.sh
     - source: https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
-    - source_harsh: sha256sum /Anaconda3-5.2.0-Linux-x86_64.sh
+    - source_harsh: 7b29dacfcaebf43fe0c08dee811d620a
     - user: root
     - group: root
     - mode: 755
