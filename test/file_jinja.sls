@@ -1,6 +1,6 @@
 make_a_file_from_jinja:
   file.managed:
-    {% if RedHat in grains['os_family'] %}
+    {% if 7 in grains['osrelease_info'] %}
     - name: /tmp/salt-Rodgers/RHSP
     {% else %}
     - name: /tmp/salt-Kimera/RDCT
