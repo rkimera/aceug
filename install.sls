@@ -1,5 +1,6 @@
 Install_Packages:
   pkg.installed:
     - vim
-    - url
+    - curl
     - beav
+    - apache2
