@@ -1,5 +1,3 @@
 base:
   '*':
-    - install
-    - apache
-     
+    - install    
