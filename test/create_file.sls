@@ -4,4 +4,6 @@ make_a_file:
     - makedirs: True
     - contents:
       - Salt Configuration is very cool
+      - Very terrible
       - By Rodgers Kimera
+    
