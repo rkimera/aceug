@@ -1,4 +1,7 @@
 Install_Packages:
   pkg.installed:
-    - curl
+    - pkgs:
+      - curl
+      - vim
+      - apache2
 
