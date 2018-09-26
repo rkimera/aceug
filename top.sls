@@ -1,5 +1,5 @@
 base:  
-  'I@environment:production and G@os_family:RedHat':
+  'I@environment:base and G@os_family:RedHat':
     - salt-minion
     - yum
     - hostname
