@@ -1,3 +1,4 @@
+{%- set group = name -%}
 {% for name, user in pillar.get('users', {}).items() if user.absent is not defined or not user.absent %}
 {%- if user == None -%}
 {%- set user = {} -%}
