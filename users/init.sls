@@ -1,10 +1,7 @@
 {% for name, user in pillar.get('users', {}).items() if user.absent is not defined or not user.absent %}
-{% for user_group, group in pillar.get('groups', {}).items() if group.absent is not defined or not group.absent %}
+{% for name, group in pillar.get('groups', {}).items() if group.absent is not defined or not group.absent %}
 {%- if user == None -%}
 {%- set user = {} -%}
-{%- endif -%}
-{%- if group == None -%}
-{%- set group = {} -%}
 {%- endif -%}
 {%- set user_files = salt['pillar.get'](('users:' ~ name ~ ':user_files'), {'enabled': False}) -%}
 {%- set home = user.get('home', "/home/%s" %name) -%}
