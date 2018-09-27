@@ -3,7 +3,7 @@
 {%- set user = {} -%}
 {%- endif -%}
 {%- set user_files = salt['pillar.get'](('users:' ~ name ~ ':user_files'), {'enabled': False}) -%}
-{%- set user_files = salt['pillar.get']('group:') -%}
+{%- set user_files = salt['pillar.get']('group:') ~ name ~ ':user_files'), {'enabled': False}) -%}
 {%- set home = user.get('home', "/home/%s" %name) -%}
 {%- set user_group = name -%}
 
