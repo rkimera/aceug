@@ -5,6 +5,7 @@
 {%- set user_files = salt['pillar.get'](('users:' ~ name ~ ':user_files'), {'enabled': False}) -%}
 {%- set home = user.get('home', "/home/%s" %name) -%}
 {%- set user_group = name -%}
+{%- set user_group = {{group}} -%}
 
 (% for group in user.get('groups', []) %}
 users_{{name}}_{{group}}_group:
