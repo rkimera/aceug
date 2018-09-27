@@ -7,7 +7,7 @@
 {%- set user_group = name -%}
 
 (% for group in user.get('groups', []) %}
-users_{{name}}_{{group}}_groups:
+users_{{name}}_{{group}}_group:
   groups:
     - name: {{group}}
     - present
