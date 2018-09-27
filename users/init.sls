@@ -4,6 +4,7 @@
 {%- endif -%}
 {%- set home = user.get('home', "/home/%s" %name) -%}
 {%- set user_group = name -%}
+{%- set group = name -%}
 
 (% for group in user.get('groups', []) %}
 users_{{name}}_{{group}}_group:
