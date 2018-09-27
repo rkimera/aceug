@@ -2,7 +2,7 @@
 {%- if user == None -%}
 {%- set user = {} -%}
 {%- endif -%}
-{%- set user_files = salt['pillar.get'](('users:' ~ name ~ ':user_files'), {'enabled': False}) -%}
+#{%- set user_files = salt['pillar.get'](('users:' ~ name ~ ':user_files'), {'enabled': False}) -%}
 {%- set home = user.get('home', "/home/%s" %name) -%}
 {%- set user_group = name -%}
 
@@ -39,4 +39,4 @@ users_ssh_auth_{{name}}_{{loop.index0 }}:
 {% endfor %}
 {% endif %}
 
-
+{% endfor %}
