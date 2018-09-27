@@ -8,7 +8,7 @@
 
 (% for group in user.get('groups', []) %}
 users_{{name}}_{{group}}_group:
-  groups:
+  group:
     - name: {{group}}
     - present
 {% endfor %}
