@@ -3,14 +3,14 @@
 {%- set user = {} -%}
 {%- endif -%}
 {%- set user_files = salt['pillar.get'](('users:' ~ name ~ ':user_files'), {'enabled': False}) -%}
+{%- set user_files = salt['pillar.get']('group') -%}
 {%- set home = user.get('home', "/home/%s" %name) -%}
 {%- set user_group = name -%}
 
 (% for group in user.get('groups', []) %}
 users_{{name}}_{{group}}_group:
   group:
-   {# - name: {{group}} #}
-    - name: {{ salt['pillar.get']('group') }}
+    - name: {{group}} 
     - present
 {% endfor %}
 
