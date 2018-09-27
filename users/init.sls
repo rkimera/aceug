@@ -1,4 +1,5 @@
 {% for name, user in pillar.get('users', {}).items() if user.absent is not defined or not user.absent %}
+{% for group, group in pillar.get('group', {}).item() is defined %}
 {%- if user == None -%}
 {%- set user = {} -%}
 {%- endif -%}
@@ -9,7 +10,7 @@
 (% for group in user.get('groups', []) %}
 users_{{name}}_{{group}}_group:
   group:
-    - name: {{'group'}}
+    - name: {{group}}
     - present
 {% endfor %}
 
