@@ -9,8 +9,7 @@
 (% for group in user.get('groups', []) %}
 users_{{name}}_{{group}}_group:
   group:
-   {# - name: {{group}} #}
-    - name: salt['pillar.get'](('user_group:')
+    - name: {{group}} 
     - present
 {% endfor %}
 
