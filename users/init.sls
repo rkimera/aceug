@@ -1,7 +1,7 @@
+{%- set user = name -%}
 {% for name, user in pillar.get('users', {}).items() if user.absent is not defined or not user.absent %}
 {%- set home = user.get('home', "/home/%s" %name) -%}
 {%- set group = name -%}
-{%- set user = name -%}
 
 (% for group in user.get('groups', []) %}
 users_{{name}}_{{group}}_group:
