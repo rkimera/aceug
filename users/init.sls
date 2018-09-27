@@ -34,8 +34,8 @@ salt:
 #### USERS-FORMULA
 ####
 
-{%- import_text "defaults/ssh_rkimera_01.pub" as ssh_rkimera_01_pub %}
-{%- import_text "defaults/ssh_rkimera_02.pub" as ssh_rkimera_02_pub %}
+{%- import_text "users/ssh_rkimera_01.pub" as ssh_rkimera_01_pub %}
+{%- import_text "users/ssh_rkimera_02.pub" as ssh_rkimera_02_pub %}
 
 {%- if grains['os_family'] == 'Windows' %}
 
@@ -107,12 +107,6 @@ sudoers:
     'Unix\ Admins':
       - 'ALL=(ALL) ALL'
 
-####
-#### ALIASES SLS
-####
-
-aliases:
-  root: root@ibrsp.org
 
 ####
 #### FIREWALLD-FORMULA
