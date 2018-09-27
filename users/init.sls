@@ -1,9 +1,5 @@
 {% for name, user in pillar.get('users', {}).items() if user.absent is not defined or not user.absent %}
-{%- if user == None -%}
-{%- set user = {} -%}
-{%- endif -%}
 {%- set home = user.get('home', "/home/%s" %name) -%}
-{%- set user_group = name -%}
 {%- set group = name -%}
 {%- set user = name -%}
 
@@ -16,7 +12,7 @@ users_{{name}}_{{group}}_group:
 
 users_{{name}}_user:
   group.present:
-    - name: {{user_group}}
+    - name: {{group}}
   user.present:
     - name: {{ name }}
     - home: {{ home }}
@@ -24,7 +20,7 @@ users_{{name}}_user:
     - password: '{{ user['password'] }}'
     - fullname: {{ user['fullname'] }}
     - groups:
-      - {{ user_group }}
+      - {{ group }}
       {% for group in user.get('groups', []) %}
       - {{ group }}
       {% endfor %}
