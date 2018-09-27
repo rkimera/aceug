@@ -40,4 +40,3 @@ users_ssh_auth_{{name}}_{{loop.index0 }}:
 {% endif %}
 
 
-##{% endfor %}
