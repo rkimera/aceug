@@ -1,8 +1,8 @@
 base:
   '*':
     - requirements
-  ##  - users
-  ##  - ssh
+    - users
+    - ssh
 
  ##   - install
    ## - test.create_file
