@@ -27,7 +27,7 @@ users_{{name}}_user:
     - groups:
       - {{ user_group }}
       {% for group in user.get('groups', []) %}
-      - {{ group }}
+      - {{ 'group' }}
       {% endfor %}
       
 {% if 'ssh_auth' in user %}
