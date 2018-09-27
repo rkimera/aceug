@@ -2,7 +2,7 @@ base:
   '*':
     - requirements
   ##  - users
-    - ssh
+  ##  - ssh
 
  ##   - install
    ## - test.create_file
