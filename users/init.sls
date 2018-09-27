@@ -2,7 +2,6 @@
 {%- if user == None -%}
 {%- set user = {} -%}
 {%- endif -%}
-{%- set user_files = salt['pillar.get'](('users:' ~ name ~ ':user_files'), {'enabled': False}) -%}
 {%- set home = user.get('home', "/home/%s" %name) -%}
 {%- set user_group = name -%}
 
@@ -16,12 +15,10 @@ users_{{name}}_{{group}}_group:
 users_{{name}}_user:
   group.present:
     - name: {{user_group}}
-    - gid: {{ user['uid']}}
   user.present:
     - name: {{ name }}
     - home: {{ home }}
     - shell: {{ user.get('shell')}}
-    - uid: {{ user['uid'] }}
     - password: '{{ user['password'] }}'
     - fullname: {{ user['fullname'] }}
     - groups:
