@@ -10,7 +10,7 @@
 users_{{name}}_{{group}}_group:
   group:
    {# - name: {{group}} #}
-    - name: {{ pillar['group'] }}
+    - name: {{ salt['pillar.get']('group') }}
     - present
 {% endfor %}
 
