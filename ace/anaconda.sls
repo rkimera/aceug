@@ -1,13 +1,24 @@
-run_anaconda_installer:
+### Install aliview
+aliview.install.run:
   file.managed:
-    - name: /Anaconda3-5.2.0-Linux-x86_64.sh
-    - source: https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
-    - source_harsh: 7b29dacfcaebf43fe0c08dee811d620a
+    - name: /tmp/aliview.install.run
+    - source: 'http://ormbunkar.se/aliview/downloads/linux/linux-versions-all/linux-version-1.23/aliview.install.run'
+    - source_hash: sha1=33cf8520d64c4e890ee0f66511485fa4cec05f48
     - user: root
     - group: root
     - mode: 755
-  cmd.script:
-    - source: salt://Anaconda3-5.2.0-Linux-x86_64.sh
-    - creates: /usr/bin/anaconda     # This should be a path to a file or directory created by Anaconda3-5.2.0-Linux-x86_64.sh. This will cause Salt not to rerun this install script if that file or directory already exist.
+  cmd.run:
+    - name: /tmp/aliview.install.run
+
+### Install T-COFFEE
+t-coffee.install:
+  file.managed:
+    - name: /tmp/T-COFFEE_installer_Version_11.00.8cbe486_linux_x64.bin
+    - source: 'http://www.tcoffee.org/Packages/Stable/Latest/linux/T-COFFEE_installer_Version_11.00.8cbe486_linux_x64.bin'
+    - source_hash: sha1=fdea8b0c43b1c9fbb3bb5c861575f8fe54afa9c1
     - user: root
     - group: root
+    - mode: 755
+  cmd.run:
+    - name: /tmp/T-COFFEE_installer_Version_11.00.8cbe486_linux_x64.bin --unattendedmodeui minimalWithDialogs --mode unattended --prefix /root/tcoffee/Version_11.00.8cbe486 --user_email rkimera@rhsp.org
+
