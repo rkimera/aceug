@@ -22,3 +22,14 @@ t-coffee.install:
   cmd.run:
     - name: /tmp/T-COFFEE_installer_Version_11.00.8cbe486_linux_x64.bin --unattendedmodeui minimalWithDialogs --mode unattended --prefix /root/tcoffee/Version_11.00.8cbe486 --user_email rkimera@rhsp.org
 
+#Install Cytoscape 3.6.0
+cytoscape.install:
+ file.managed:
+  - name: /tmp/Cytoscape_3_6_0_unix.sh
+  - source: 'http://chianti.ucsd.edu/cytoscape-3.6.0/Cytoscape_3_6_0_unix.sh'
+  - skip_verify: True
+  - user: root
+  - group: root
+  - mode: 755
+ cmd.run:
+  - name: /tmp/Cytoscape_3_6_0_unix.sh -q
